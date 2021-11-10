@@ -5,7 +5,7 @@
 -- Version: 1.0                                                     --
 ----------------------------------------------------------------------
 
--- This will create the BackupSize column that you will select later
+-- This will create the 'BackupSize' table alias that you will select from later
 
 WITH BackupSize AS (
 SELECT TOP 1000
@@ -25,6 +25,7 @@ GROUP BY [database_name]
 ORDER BY [Year],[Month]
 -- END
 
+-- Select the dates, sizes, and delta (size difference) from the 'BackupSize' table
 SELECT b.[Year]
   ,b.[Month]
   ,b.[Backup Size GB]

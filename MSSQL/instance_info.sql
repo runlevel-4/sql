@@ -5,4 +5,4 @@
 -- Version: 1.0                                                     --
 ----------------------------------------------------------------------
 
-SELECT @@SERVER, @@VERSION
+SELECT @@SERVERNAME, @@VERSION

@@ -6,7 +6,7 @@
 ----------------------------------------------------------------------
 
 -- This will create the 'BackupSize' table alias that you will select from later
-
+-- BEGIN 'BackupSize' table alias
 WITH BackupSize AS (
 SELECT TOP 1000
   rn = ROW_NUMBER() OVER(ORDER BY DATEPART(year,[backup_start_date]) ASC,
@@ -23,7 +23,7 @@ GROUP BY [database_name]
   ,DATEPART(yyyy,[backup_starT_date])
   ,DATEPART(mm,[backup_start_date])
 ORDER BY [Year],[Month]
--- END
+-- END 'BackupSize' table
 
 -- Select the dates, sizes, and delta (size difference) from the 'BackupSize' table
 SELECT b.[Year]
